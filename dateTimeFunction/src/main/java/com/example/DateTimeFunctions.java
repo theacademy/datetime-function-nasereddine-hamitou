@@ -53,10 +53,10 @@ public class DateTimeFunctions {
 	 */
 	public static String getTimeDifference(LocalDate date1, LocalDate date2) {
 		//YOUR CODE STARTS HERE
-        Period difference = date1.until(date2);
+        Period timeDifference = date1.until(date2);
 
 		return String.format("Years-%d:Months-%d:Days-%d",
-                difference.getYears(), difference.getMonths(), difference.getDays());
+                timeDifference.getYears(), timeDifference.getMonths(), timeDifference.getDays());
 		//YOUR CODE ENDS HERE
 
 	}
