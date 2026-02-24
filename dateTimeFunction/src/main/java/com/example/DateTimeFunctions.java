@@ -1,6 +1,8 @@
 package com.example;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 public class DateTimeFunctions {
 
@@ -12,17 +14,14 @@ public class DateTimeFunctions {
 	 * - Do not add code outside of the placeholders.
 	 * - Do not change code except as required inside the placeholders.
 	 *	    //YOUR CODE STARTS HERE
-	 *
+     *
 	 *		//YOUR CODE ENDS HERE
-	 */
-
-
-	/*
+     *
 	 * Implement the method so that it returns today's date.
 	 */
 	public static LocalDate getTodaysDate() {
 		//YOUR CODE STARTS HERE
-		return null;
+        return LocalDate.now();
 		//YOUR CODE ENDS HERE
 
 	}
@@ -33,7 +32,7 @@ public class DateTimeFunctions {
 	 */
 	public static LocalDate getLaterDatebyDays(LocalDate date, int x) {
 		//YOUR CODE STARTS HERE
-		return null;
+        return date.plusDays(x);
 		//YOUR CODE ENDS HERE
 
 	}
@@ -44,7 +43,7 @@ public class DateTimeFunctions {
 	 */
 	public static LocalDate getPreviousDatebyWeeks(LocalDate date, int x) {
 		//YOUR CODE STARTS HERE
-		return null;
+        return date.minusWeeks(x);
 		//YOUR CODE ENDS HERE
 
 	}
@@ -52,11 +51,14 @@ public class DateTimeFunctions {
 	/*
 	 * Implement the method so that it returns the time difference between two input dates
 	 * in terms of years, months, and days.
-	 * Return the String in the format: "Year-20:Months-5:Days-1"
+	 * Return the String in the format: "Years-20:Months-5:Days-1"
 	 */
 	public static String getTimeDifference(LocalDate date1, LocalDate date2) {
 		//YOUR CODE STARTS HERE
-		return null;
+        Period difference = date1.until(date2);
+
+		return String.format("Years-%d:Months-%d:Days-%d",
+                difference.getYears(), difference.getMonths(), difference.getDays());
 		//YOUR CODE ENDS HERE
 
 	}
